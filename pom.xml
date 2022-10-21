@@ -11,19 +11,21 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-
         <junit.version>5.9.1</junit.version>
+        <junit.platform.launcher.version>1.9.0</junit.platform.launcher.version>
+        <maven.plugin.version>3.0.0-M7</maven.plugin.version>
+        <mp3agic.version>0.9.1</mp3agic.version>
     </properties>
 
     <build>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version>
+                <version>${maven.plugin.version}</version>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.0.0-M7</version>
+                <version>${maven.plugin.version}</version>
             </plugin>
         </plugins>
     </build>
@@ -32,13 +34,12 @@
         <dependency>
             <groupId>com.mpatric</groupId>
             <artifactId>mp3agic</artifactId>
-            <version>0.9.1</version>
+            <version>${mp3agic.version}</version>
         </dependency>
-        <!-- Only needed to run tests in a version of IntelliJ IDEA that bundles older versions -->
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
-            <version>1.8.2</version>
+            <version>${junit.platform.launcher.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
